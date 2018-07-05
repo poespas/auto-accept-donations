@@ -1,0 +1,19 @@
+{
+    "name": "auto-accept-donations",
+    "version": "1.0.0",
+    "description": "Customizable script that automatically accepts donations on Steam.",
+    "main": "index.js",
+    "dependencies": {
+      "steam-totp": "^2.0.1",
+      "steam-tradeoffer-manager": "^2.9.3",
+      "steam-user": "^3.26.0",
+      "steamcommunity": "^3.34.1",
+      "moment": "^2.22.2",
+      "colors": "^1.3.0"
+    },
+    "author": {
+      "name": "confern",
+      "url": "https://steamcommunity.com/id/confern/"
+    },
+    "license": "MIT"
+}
