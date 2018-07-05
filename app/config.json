@@ -7,7 +7,7 @@
 	"optional": {
 		"sharedSecret": "SHAREDSECRET=",
 		"persona": "Online",
-		"game": "github.com/confernn/auto-accept-donations",
+		"game": "github.com/confernn",
 		"clock": "en",
 		"enableMessages": false,
 		"enableComments": false,
