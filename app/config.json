@@ -1,0 +1,18 @@
+{
+	"account": {
+		"username": "USERNAME NOT NICKNAME",
+		"password": "PASSWORD"
+	},
+
+	"optional": {
+		"sharedSecret": "SHAREDSECRET=",
+		"persona": "Online",
+		"game": "github.com/confernn/auto-accept-donations",
+		"clock": "en",
+		"enableMessages": false,
+		"enableComments": false,
+		"inviteToGroup": true,
+		"message": "Thanks for donating to me!",
+		"comment": "+rep donated to me, thanks!"
+	}
+}
