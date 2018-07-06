@@ -1,8 +1,9 @@
 Free open-source Steam bot that automatically accepts donations.
 
 How to setup:
-1. Run install.bat (this may take some time depending on your internet)
-2. Now configure the config.json which is located in the app folder.
+1. Firstly you have to download Nodejs, you can download it here: https://nodejs.org/en/download/ 
+2. Then run install.bat
+3. Now configure the config.json which is located in the app folder.
 
        Required:
        Username: your Steam account name NOT nickname.
@@ -20,4 +21,4 @@ How to setup:
        Comment: comment user will recieve if donation went through (if enabled).
 
 
-3. Run start.bat
+4. Run start.bat
