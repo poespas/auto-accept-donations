@@ -99,7 +99,7 @@ function verify() {
 }
 
 var now = new Date();
-var delay = 10 * 60 * 1000;
+var delay = 30 * 60 * 1000;
 var start = delay - (now.getMinutes() * 60 + now.getSeconds()) * 1000 + now.getMilliseconds();
 
 setTimeout(function support(details, parental) {
