@@ -11,6 +11,7 @@
 		"clock": "en",
 		"enableMessages": false,
 		"enableComments": false,
+		"enableBlacklist": false,
 		"inviteToGroup": true,
 		"message": "Thanks for donating to me!",
 		"comment": "+rep donated to me, thanks!"
