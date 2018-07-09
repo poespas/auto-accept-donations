@@ -1,6 +1,6 @@
 {
     "name": "auto-accept-donations",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Customizable script that automatically accepts donations on Steam.",
     "main": "index.js",
     "dependencies": {
