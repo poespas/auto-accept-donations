@@ -6,6 +6,7 @@ const moment = require('moment');
 const colors = require('colors');
 
 const config = require('./config.json');
+const blacklist = require('./blacklist.json');
 
 const client = new SteamUser();
 const community = new SteamCommunity();
@@ -30,7 +31,7 @@ client.on('loggedOn', (details, parental) => {
         console.log(`[${moment().format('LTS')}]: Logged into Steam as `+personas[client.steamID].player_name.green);
         var persona = config.optional.persona;
         client.setPersona(SteamUser.Steam.EPersonaState.persona);
-        if(config.optional.game != 0) {
+        if(config.optional.game != 'none') {
             client.gamesPlayed([config.optional.game]);
         }
         setTimeout(function() {
@@ -46,7 +47,7 @@ client.on('webSession', (sessionid, cookies) => {
 
 function acceptOffer(offer) {
     offer.accept((err) => {
-        console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`   Trying to accept incoming offer.`);
+        console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`   Trying to accept incoming donation.`);
     })
 }
 
@@ -55,11 +56,11 @@ function processOffer(offer) {
         acceptOffer(offer);
     } else {
         console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`    Incoming offer is not a donation, offer ignored.`.yellow);
-        console.log(' ');
     }
 }
 
 manager.on('newOffer', (offer) => {
+    console.log(' ');
     console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`  We recieved a new offer. Trade was sent by `+offer.partner.getSteamID64().yellow);
     processOffer(offer);
 });
@@ -68,12 +69,20 @@ manager.on('receivedOfferChanged', (offer, oldState) => {
     if(offer.state === TradeOfferManager.ETradeOfferState.Accepted) {
         setTimeout(function() {
             console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`    Incoming offer went through successfully.`.green);
-            console.log(' ');
             if(config.optional.enableMessages === true) {
                 client.chatMessage(offer.partner.getSteam3RenderedID(), config.optional.message);
             }
             if(config.optional.enableComments === true) {
-                community.postUserComment(offer.partner.getSteam3RenderedID(), config.optional.comment)
+                if(config.optional.enableBlacklist === true) {
+                    if(blacklist.indexOf(offer.partner.getSteamID64())) {
+                        console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`     Incoming offer partner is listed in blacklist, not leaving a comment.`.yellow);
+                    } else {
+                        community.postUserComment(offer.partner.getSteam3RenderedID(), config.optional.comment);
+                        console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`     Incoming offer partner is not listed in blacklist, trying to leave a comment.`);
+                    }
+                } else {
+                    community.postUserComment(offer.partner.getSteam3RenderedID(), config.optional.comment);
+                }
             }
             if(config.optional.inviteToGroup === true) {
                 client.addFriend(offer.partner.getSteam3RenderedID()); {
@@ -85,7 +94,6 @@ manager.on('receivedOfferChanged', (offer, oldState) => {
     if(offer.state === TradeOfferManager.ETradeOfferState.Declined) {
         setTimeout(function() {
             console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`    Incoming offer was declined.`.red);
-            console.log(' ');
         }, 500);
     }
 })
@@ -97,16 +105,3 @@ function verify() {
         }
     })
 }
-
-var now = new Date();
-var delay = 30 * 60 * 1000;
-var start = delay - (now.getMinutes() * 60 + now.getSeconds()) * 1000 + now.getMilliseconds();
-
-setTimeout(function support(details, parental) {
-    if(config.optional.inviteToGroup != true) {
-        console.log(' ');
-        console.log(` Hey! Thanks for using my free script! I would really appericate if you turned the 'inviteUserToGroup' on, even though it's optional. This project is entirely community driven, which means that I do not make any money whatsoever. Thanks for understanding.`.red);
-        console.log(' ');
-    }
-    setTimeout(support, delay);
-}, start);
