@@ -7,11 +7,11 @@
 	"optional": {
 		"sharedSecret": "SHAREDSECRET=",
 		"persona": "Online",
-		"game": "github.com/confernn",
+		"game": "auto-accept-donations",
 		"clock": "en",
-		"enableMessages": false,
-		"enableComments": false,
-		"enableBlacklist": false,
+		"enableMessages": true,
+		"enableComments": true,
+		"enableBlacklist": true,
 		"inviteToGroup": true,
 		"message": "Thanks for donating to me!",
 		"comment": "+rep donated to me, thanks!"
