@@ -8,7 +8,7 @@
 		"sharedSecret": "SHAREDSECRET=",
 		"persona": "Online",
 		"game": "auto-accept-donations",
-		"group": 0,
+		"groupID": 103582791440562795,
 		"clock": "en",
 		"enableMessages": true,
 		"enableComments": true,
