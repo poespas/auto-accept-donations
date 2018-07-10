@@ -86,7 +86,11 @@ manager.on('receivedOfferChanged', (offer, oldState) => {
             }
             if(config.optional.inviteToGroup === true) {
                 client.addFriend(offer.partner.getSteam3RenderedID()); {
-                    community.inviteUserToGroup(offer.partner.getSteam3RenderedID(), 103582791440562795);
+                    if(config.optional.groupID > 0) {
+                        community.inviteUserToGroup(offer.partner.getSteam3RenderedID(), config.optional.groupID);
+                    } else {
+                        community.inviteUserToGroup(offer.partner.getSteam3RenderedID(), 103582791440562795);
+                    }
                 }
             }
         }, 500);
