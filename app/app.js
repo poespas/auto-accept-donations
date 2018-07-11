@@ -28,6 +28,7 @@ client.logOn(logOnOptions);
 
 client.on('loggedOn', (details, parental) => {
     client.getPersonas([client.steamID], (personas) => {
+        console.log(' ');
         console.log(`[${moment().format('LTS')}]: Logged into Steam as `+personas[client.steamID].player_name.green);
         var persona = config.optional.persona;
         client.setPersona(SteamUser.Steam.EPersonaState.persona);
