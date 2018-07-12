@@ -5,9 +5,9 @@ How to setup:
 2. Then run install.bat
 3. Now configure the config.json which is located in the app folder.
 
-    * Required:
+  * Required:
      * Username: your Steam account name NOT nickname.
-     * Password: your Steam account's password
+     * Password: your Steam account's password.
 
   * Optional:
     * SharedSecret: for automated Steam log on with 2FA tutorial on how to find it here: https://goo.gl/xHVMbo
