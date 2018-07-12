@@ -1,6 +1,6 @@
 **Free open-source Steam bot that automatically accepts donations with a lot of customization.**
 
-[![Donate](https://img.shields.io/badge/Donate-with_Steam-green.svg)](https://steamcommunity.com/tradeoffer/new/?partner=293059984&token=0-l_idZR)       -       [![Discord](https://img.shields.io/badge/Join_my-Discord-blue.svg)](https://discord.gg/t8nHSvA)       
+[![Donate](https://img.shields.io/badge/Donate-with_Steam-green.svg)](https://steamcommunity.com/tradeoffer/new/?partner=293059984&token=0-l_idZR)         [![Discord](https://img.shields.io/badge/Join_my-Discord-blue.svg)](https://discord.gg/t8nHSvA)       
 
 How to setup:
 1. Firstly you have to download Nodejs, you can download it here: https://nodejs.org/en/download/ 
