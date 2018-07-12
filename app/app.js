@@ -56,7 +56,7 @@ function processOffer(offer) {
     if(offer.itemsToGive.length === 0) {
         acceptOffer(offer);
     } else {
-        console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`    Incoming offer is not a donation, offer ignored.`.yellow);
+        console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`   Incoming offer is not a donation, offer ignored.`.yellow);
     }
 }
 
