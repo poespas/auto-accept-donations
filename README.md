@@ -1,4 +1,4 @@
-Free open-source Steam bot that automatically accepts donations.
+**Free open-source Steam bot that automatically accepts donations with a lot of customization.**
 
 How to setup:
 1. Firstly you have to download Nodejs, you can download it here: https://nodejs.org/en/download/ 
@@ -13,11 +13,12 @@ How to setup:
     * SharedSecret: for automated Steam log on with 2FA tutorial on how to find it here: https://goo.gl/xHVMbo
     * Persona: how you will apear for your friends, either Online, Offline, Busy, LookingToTrade or LookingToPlay.
     * Game: the game that will be show on your profile, eg remove the two "" and paste 440 for TF2 or 730 for CSGO, for custom games write what you want within two "" eg "accepting donations". Leave it at 0 if you don't want to idle a game.
+    * GroupID: the ID of the group you want the user to be invited to (if enabled).  
     * Clock: your local time, eg nb for Norway, en for US, en-uk for UK and de for Germany (find your local time at https://momentjs.com)
-    * enableMessages: either enable or disable messages sent when accepting a donation. False for off, true for on.
-    * enableComments: either enable or disable comments when accepting a donation. False for off, true for on.
-    * enableBlacklist: either enable or disable to ignore leaving comments on user profiles listed in the blacklist.json. False for off, true for on.
-    * inviteToGroup: either enable or disable inviting the user you've traded with to our group (steamcommunity.com/groups/blankllc). False for off, true for on. This will help us a lot if you leave it on.
+    * EnableMessages: either enable or disable messages sent when accepting a donation. False for off, true for on.
+    * EnableComments: either enable or disable comments when accepting a donation. False for off, true for on.
+    * EnableBlacklist: either enable or disable to ignore leaving comments on user profiles listed in the blacklist.json. False for off, true for on.
+    * InviteToGroup: either enable or disable inviting the user you've traded with to our group (steamcommunity.com/groups/blankllc). False for off, true for on. This will help us a lot if you leave it on.
     * Message: message user will recieve if donation went through (if enabled).
     * Comment: comment user will recieve if donation went through (if enabled).
 
