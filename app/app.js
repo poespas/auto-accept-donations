@@ -74,8 +74,7 @@ manager.on('receivedOfferChanged', (offer, oldState) => {
             }
             if(config.optional.enableComments === true) {
                 if(config.optional.enableBlacklist === true) {
-                    var id = parseInt(offer.partner.getSteamID64());
-                    if(blacklist.includes(id)) {
+                    if(blacklist.includes(Number(offer.partner.getSteamID64()))) {
                         console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`     Incoming offer partner is listed in blacklist, not leaving a comment.`.yellow);
                     } else {
                         console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`     Incoming offer partner is not listed in blacklist, trying to leave a comment.`);
