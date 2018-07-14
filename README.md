@@ -15,7 +15,6 @@ How to setup:
 
   * Optional:
     * SharedSecret: for automated Steam log on with 2FA tutorial on how to find it here: https://goo.gl/xHVMbo
-    * Persona: how you will apear for your friends, either Online, Offline, Busy, LookingToTrade or LookingToPlay.
     * Game: the game that will be show on your profile, eg remove the two "" and paste 440 for TF2 or 730 for CSGO, for custom games write what you want within two "" eg "accepting donations". Leave it at 0 if you don't want to idle a game.
     * GroupID: the ID of the group you want the user to be invited to (if enabled).  
     * Clock: your local time, eg nb for Norway, en for US, en-uk for UK and de for Germany (find your local time at https://momentjs.com)
