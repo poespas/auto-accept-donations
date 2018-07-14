@@ -7,7 +7,7 @@
 	"optional": {
 		"sharedSecret": "SHAREDSECRET=",
 		"persona": "Online",
-		"game": "auto-accept-donations",
+		"game": 440,
 		"groupID": 103582791440562795,
 		"clock": "en",
 		"enableMessages": true,
