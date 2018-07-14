@@ -28,13 +28,11 @@ client.logOn(logOnOptions);
 
 client.on('loggedOn', (details, parental) => {
     client.getPersonas([client.steamID], (personas) => {
-        var game = config.optional.game;
         console.log(' ');
         console.log(`[${moment().format('LTS')}]: Logged into Steam as `+personas[client.steamID].player_name.green);
-        /*var persona = config.optional.persona;
-        client.setPersona(SteamUser.Steam.EPersonaState.persona);*/
-        if(game) {
-            client.gamesPlayed(['auto-accept-donations', game]);
+        client.setPersona(SteamUser.Steam.EPersonaState.Online);
+        if(config.optional.game) {
+            client.gamesPlayed(['auto-accept-donations', config.optional.game]);
         }
         setTimeout(function() {
             verify();
@@ -76,11 +74,12 @@ manager.on('receivedOfferChanged', (offer, oldState) => {
             }
             if(config.optional.enableComments === true) {
                 if(config.optional.enableBlacklist === true) {
-                    if(blacklist.indexOf(offer.partner.getSteamID64())) {
+                    var id = parseInt(offer.partner.getSteamID64());
+                    if(blacklist.includes(id)) {
                         console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`     Incoming offer partner is listed in blacklist, not leaving a comment.`.yellow);
                     } else {
-                        community.postUserComment(offer.partner.getSteam3RenderedID(), config.optional.comment);
                         console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`     Incoming offer partner is not listed in blacklist, trying to leave a comment.`);
+                        community.postUserComment(offer.partner.getSteam3RenderedID(), config.optional.comment);
                     }
                 } else {
                     community.postUserComment(offer.partner.getSteam3RenderedID(), config.optional.comment);
