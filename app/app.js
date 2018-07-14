@@ -28,13 +28,14 @@ client.logOn(logOnOptions);
 
 client.on('loggedOn', (details, parental) => {
     client.getPersonas([client.steamID], (personas) => {
+        var game = config.optional.game;
         console.log(' ');
         console.log(`[${moment().format('LTS')}]: Logged into Steam as `+personas[client.steamID].player_name.green);
         /*var persona = config.optional.persona;
-        client.setPersona(SteamUser.Steam.EPersonaState.persona);
-        if(config.optional.game != 'none') {
-            client.gamesPlayed([config.optional.game]);
-        }*/
+        client.setPersona(SteamUser.Steam.EPersonaState.persona);*/
+        if(game) {
+            client.gamesPlayed(['auto-accept-donations', game]);
+        }
         setTimeout(function() {
             verify();
         }, 1000);
