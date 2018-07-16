@@ -12,4 +12,4 @@ Have a question, need help or wanting someone to talk to? Join my Discord!
 
 Want to support me and my future projects?
 
-[![Donate](https://img.shields.io/badge/Donate-with_Steam-green.svg)](https://steamcommunity.com/tradeoffer/new/?partner=293059984&token=0-l_idZR) [![Donate2](https://img.shields.io/badge/PayPal.Me-Donate-blue.svg)](http://paypal.me/confern) 
+[![Donate](https://img.shields.io/badge/Donate_with-Steam-green.svg)](https://steamcommunity.com/tradeoffer/new/?partner=293059984&token=0-l_idZR) [![Donate2](https://img.shields.io/badge/PayPal.Me-Donate-blue.svg)](http://paypal.me/confern) 
