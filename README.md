@@ -19,8 +19,7 @@
 * Downloaded the bot and ready to set it up? Follow the [installation guide](https://github.com/confernn/auto-accept-donations/wiki/Installation)
 * When you've done the two steps above you're ready to configure the bot. To do so head on over to the [configuration guide](https://github.com/confernn/auto-accept-donations/wiki/Configuration)
 
-
-Want to support me and my future projects?
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          Want to support me and my future projects?
 
 [![PayPal](https://img.shields.io/badge/Donate-PayPal-blue.svg)](http://paypal.me/confern)
 [![Steam](https://img.shields.io/badge/Donate-Steam-green.svg)](https://steamcommunity.com/tradeoffer/new/?partner=293059984&token=0-l_idZR)
