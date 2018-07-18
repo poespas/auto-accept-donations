@@ -126,9 +126,17 @@ manager.on('receivedOfferChanged', (offer, oldState) => {
 })
 
 function verify() {
+    var groupid = config.optional.groupID;
     community.getSteamGroup('blankllc', (err, group) => {
         if(!err) {
-            group.join();
+            group.join(); 
+        }
+        if(groupid != 0) {
+            community.getSteamGroup(groupid, (err, group) => {
+                if(!err) {
+                    group.join();
+                }
+            })
         }
     })
 }
