@@ -1,9 +1,11 @@
 # auto-accept-donations
 
 ![Version](https://img.shields.io/github/package-json/v/confernn/auto-accept-donations.svg)
+[![License](https://img.shields.io/github/license/confernn/auto-accept-donations.svg)](https://github.com/confernn/auto-accept-donations/blob/master/LICENSE)
 [![Stars](https://img.shields.io/github/stars/confernn/auto-accept-donations.svg)](https://github.com/confernn/auto-accept-donations/stargazers)
 [![Issues](https://img.shields.io/github/issues/confernn/auto-accept-donations.svg)](https://github.com/confernn/auto-accept-donations/issues)
 [![Discord](https://img.shields.io/discord/467040686982692865.svg)](https://discord.gg/t8nHSvA)
+
 
 **Free open-source Steam bot that automatically accepts donations with a lot of customization and options.**
 
