@@ -1,4 +1,4 @@
 @echo off
-title Auto Accept Donations by confern
+title auto-accept-donations
 node index.js
 pause
