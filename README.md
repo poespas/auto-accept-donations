@@ -7,7 +7,7 @@
 [![Discord](https://img.shields.io/discord/467040686982692865.svg)](https://discord.gg/t8nHSvA)
 
 
-**Free open-source Steam bot that automatically accepts donations with a lot of customization and options.**
+**Free, secure and fast customizable script that automatically accepts donations on Steam with a lot of options. **
 
 #
 ## Requirements for using the bot
