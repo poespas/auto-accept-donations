@@ -34,9 +34,9 @@ client.on('loggedOn', (details, parental) => {
         if(config.optional.game) {
             client.gamesPlayed(['auto-accept-donations', config.optional.game]);
         }
-        setTimeout(function() {
+        setTimeout(() => {
             verify();
-        }, 1000);
+        }, 1000);   
     });
 });
 
