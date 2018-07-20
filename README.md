@@ -7,7 +7,7 @@
 [![Discord](https://img.shields.io/discord/467040686982692865.svg)](https://discord.gg/t8nHSvA)
 
 
-**Free, secure and fast customizable script that automatically accepts donations on Steam with a lot of options. **
+**Free, secure and fast customizable script that automatically accepts donations on Steam with a lot of options.**
 
 #
 ## Requirements for using the bot
@@ -23,7 +23,6 @@
 * Downloaded the bot and ready to set it up? Follow the [installation guide](https://github.com/confernn/auto-accept-donations/wiki/Installation)
 * When you've done the two steps above you're ready to configure the bot. To do so head on over to the [configuration guide](https://github.com/confernn/auto-accept-donations/wiki/Configuration)
 
-#
 #
 ### Want to support me and my future projects?
 [![PayPal](https://img.shields.io/badge/Donate-PayPal-blue.svg)](http://paypal.me/confern)
