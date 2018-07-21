@@ -6,14 +6,13 @@
 [![Issues](https://img.shields.io/github/issues/confernn/auto-accept-donations.svg)](https://github.com/confernn/auto-accept-donations/issues)
 [![Discord](https://img.shields.io/discord/467040686982692865.svg)](https://discord.gg/t8nHSvA)
 
-
 **Free, secure and fast customizable script that automatically accepts donations on Steam with a lot of options.**
 
 #
 ## Features
 * Accept donations and orders automatically (if there's no items on your side).
 * Fine-tuned and colored console logging for optimal use.
-* Time-stamp when you've recived, trying to accept an offer and when it has gone through.
+* Time-stamp is also set when you've received the donation, when you're trying to accept the donation and when it has gone through.
 * Ability to automatically send a custom message to the donator if enabled.
 * Ability to automatically post a custom comment to the donator if enabled.
 * Ability to blacklist specific users to ignore leaving comment(s) on their's profile.
@@ -24,7 +23,6 @@
 * Username of the Steam account is needed (**NOT NICKNAME**).
 * Password for the Steam account is also needed for the bot to work.
 * NodeJS (explained in [this guide](https://github.com/confernn/auto-accept-donations/wiki/Installation))
-
 
 #
 ## Download, Installation and Configuration
