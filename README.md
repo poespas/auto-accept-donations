@@ -11,7 +11,6 @@
 #
 ## Features
 * Accept donations and orders automatically (if there's no items on your side).
-* Fine-tuned and colored console logging for optimal use.
 * Ability to automatically send a custom message to the donator if enabled.
 * Ability to automatically post a custom comment to the donator if enabled.
 * Ability to blacklist specific users to ignore leaving comment(s) on their's profile.
