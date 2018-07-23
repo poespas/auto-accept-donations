@@ -4,6 +4,8 @@ Like all of my other bots this bot also uses something called Node Package Modul
 #
 #
 
+**So after following the [Installation guide](https://github.com/confernn/auto-accept-donations/wiki/Installation) you're ready to configure the bot. Do not configure any other file than config.json and blacklist.json unless you know what you're doing!**
+
 # **Required settings**
 ### Username
 #### Username or account name of your Steam account witch can be seen in the top right corner of Steam. The username of your account is **NOT** your nickname!
@@ -23,8 +25,8 @@ Like all of my other bots this bot also uses something called Node Package Modul
 #### The ID of the game you want to idle, could be found by coping the link of the game's page in the Steam Store. E.G for TF2 use 440, for CSGO use 730.
 #
 ### GroupID
-#### The ID64 of the group you want to invite the user to (if enabled). The ID64 of your group could be found by editing this link: https://steamcommunity.com/groups/<GroupName>/memberslistxml/?xml=1
-#### Set this value to 0 if you don't want this option enabled.
+#### The URL of the group you want to invite the user to (if enabled). E.G: https://steamcommunity.com/groups/blankllc
+#### Delete the option ("groupID": "https://steamcommunity.com/groups/blankllc",) to disable the option.
 #	
 ### Clock
 #### Language code for setting your local time. E.G 'en' for US, 'en-uk' for UK, 'nb' for Norway, 'ru' for Russia. You can find your local code here: momentjs.com
@@ -48,5 +50,7 @@ Like all of my other bots this bot also uses something called Node Package Modul
 #### Custom comment that will be left at the donator's profile if enabled.
 #
 #
+# **You're now ready to start the bot**
+### Follow the last steps of the guide [here](https://github.com/confernn/auto-accept-donations/wiki/Installation#running-the-bot).
 ## **Running the bot**
 Before running the start.bat you need to run the install.bat (this might take some minutes). When everything has been installed correctly you can finally run the start.bat. When starting the bot enter your 2FA code and you will hopefully see: **Successfully logged into Steam as 'nickname'**. 
