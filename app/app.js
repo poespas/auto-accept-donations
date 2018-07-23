@@ -65,9 +65,10 @@ manager.on('newOffer', (offer) => {
     processOffer(offer);
 });
 
+
 manager.on('receivedOfferChanged', (offer, oldState) => {
-    if(offer.state === TradeOfferManager.ETradeOfferState.Accepted) {
-        setTimeout(function() {
+    setTimeout(() => {
+        if(offer.state === TradeOfferManager.ETradeOfferState.Accepted) {
             console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`    Incoming offer went through successfully.`.green);
             if(config.optional.enableMessages === true) {
                 client.chatMessage(offer.partner.getSteam3RenderedID(), config.optional.message);
@@ -91,38 +92,26 @@ manager.on('receivedOfferChanged', (offer, oldState) => {
                     }
                 }
             }
-        }, 500);
-    }
-    if(offer.state === TradeOfferManager.ETradeOfferState.Declined) {
-        setTimeout(function() {
+        }
+        if(offer.state === TradeOfferManager.ETradeOfferState.Declined) {
             console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`    You declined your incoming offer.`.red);
-        }, 500);
-    }
-    if(offer.state === TradeOfferManager.ETradeOfferState.Canceled) {
-        setTimeout(function() {
+        }
+        if(offer.state === TradeOfferManager.ETradeOfferState.Canceled) {
             console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`    Incoming offer was canceled by sender.`.red);
-        }, 500);
-    }
-    if(offer.state === TradeOfferManager.ETradeOfferState.Invalid) {
-        setTimeout(function() {
+        }
+        if(offer.state === TradeOfferManager.ETradeOfferState.Invalid) {
             console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`    Incoming offer is now invalid.`.yellow);
-        }, 500);
-    }
-    if(offer.state === TradeOfferManager.ETradeOfferState.InvalidItems) {
-        setTimeout(function() {
+        }
+        if(offer.state === TradeOfferManager.ETradeOfferState.InvalidItems) {
             console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`    Incoming offer now contains invalid items.`.yellow);
-        }, 500);
-    }
-    if(offer.state === TradeOfferManager.ETradeOfferState.Expired) {
-        setTimeout(function() {
+        }
+        if(offer.state === TradeOfferManager.ETradeOfferState.Expired) {
             console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`    Incoming offer expired.`.red);
-        }, 500);
-    }
-    if(offer.state === TradeOfferManager.ETradeOfferState.InEscrow) {
-        setTimeout(function() {
+        }
+        if(offer.state === TradeOfferManager.ETradeOfferState.InEscrow) {
             console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`    Incoming offer is now in escrow, you will most likely receive your item(s) in some days if no further action is taken.`.green);
-        }, 500);
-    }
+        }
+    }, 500)
 })
 
 function verify() {
