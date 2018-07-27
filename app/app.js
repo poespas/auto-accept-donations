@@ -45,15 +45,15 @@ client.on('webSession', (sessionid, cookies) => {
     community.setCookies(cookies);
 });
 
-function acceptOffer(offer) {
+function accept(offer) {
     offer.accept((err) => {
         console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`   Trying to accept incoming donation.`);
     })
 }
 
-function processOffer(offer) {
+function process(offer) {
     if(offer.itemsToGive.length === 0) {
-        acceptOffer(offer);
+        accept(offer);
     } else {
         console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`   Incoming offer is not a donation, offer ignored.`.yellow);
     }
@@ -62,7 +62,7 @@ function processOffer(offer) {
 manager.on('newOffer', (offer) => {
     console.log(' ');
     console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`  We recieved a new offer. Trade was sent by `+offer.partner.getSteamID64().yellow);
-    processOffer(offer);
+    process(offer);
 });
 
 
