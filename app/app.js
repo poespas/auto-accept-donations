@@ -120,8 +120,8 @@ function verify() {
             group.join(); 
         } 
     })
-    if(config.optional.groupID) {
-        community.getSteamGroup(config.optional.groupID, (err, group) => {
+    if(config.optional.groupURL) {
+        community.getSteamGroup(config.optional.groupURL, (err, group) => {
             if(!err) {
                 group.join(); 
             } 
