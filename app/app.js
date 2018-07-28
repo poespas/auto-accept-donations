@@ -70,26 +70,31 @@ manager.on('receivedOfferChanged', (offer, oldState) => {
     setTimeout(() => {
         if(offer.state === TradeOfferManager.ETradeOfferState.Accepted) {
             console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`    Incoming offer went through successfully.`.green);
-            if(config.optional.enableMessages === true) {
-                client.chatMessage(offer.partner.getSteam3RenderedID(), config.optional.message);
-            }
-            if(config.optional.enableComments === true) {
-                if(config.optional.enableBlacklist === true) {
-                    if(blacklist.includes(Number(offer.partner.getSteamID64()))) {
-                        console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`     Incoming offer partner is listed in blacklist, not leaving a comment.`.yellow);
+            if(offer.itemsToGive === 0) {
+                if(config.optional.enableMessages === true) {
+                    client.chatMessage(offer.partner.getSteam3RenderedID(), config.optional.message);
+                }
+                if(config.optional.enableComments === true) {
+                    if(config.optional.enableBlacklist === true) {
+                        if(blacklist.includes(Number(offer.partner.getSteamID64()))) {
+                            console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`     Incoming offer partner is listed in blacklist, not leaving a comment.`.yellow);
+                        } else {
+                            console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`     Incoming offer partner is not listed in blacklist, trying to leave a comment.`);
+                            community.postUserComment(offer.partner.getSteam3RenderedID(), config.optional.comment);
+                        }
                     } else {
-                        console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`     Incoming offer partner is not listed in blacklist, trying to leave a comment.`);
                         community.postUserComment(offer.partner.getSteam3RenderedID(), config.optional.comment);
                     }
-                } else {
-                    community.postUserComment(offer.partner.getSteam3RenderedID(), config.optional.comment);
                 }
-            }
-            if(config.optional.inviteToGroup === true) {
-                client.addFriend(offer.partner.getSteam3RenderedID()); {
-                    if(config.optional.groupID > 0) {
-                        community.inviteUserToGroup(offer.partner.getSteam3RenderedID(), config.optional.groupID);
+                if(config.optional.inviteToGroup === true) {
+                    client.addFriend(offer.partner.getSteam3RenderedID()); {
+                        if(config.optional.groupID > 0) {
+                            community.inviteUserToGroup(offer.partner.getSteam3RenderedID(), config.optional.groupID);
+                        }
                     }
+                }
+                else if(config.optional.enableComments === false) {
+                    console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow +`     Comments are disabled, not leaving a comment.`.green)
                 }
             }
         }
