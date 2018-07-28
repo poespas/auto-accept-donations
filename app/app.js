@@ -97,7 +97,7 @@ manager.on('receivedOfferChanged', (offer, oldState) => {
                         }
                     }
                 }
-                else if(config.optional.enableComments === false) {
+                if(config.optional.enableComments === false) {
                     console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow +`     Comments are disabled, not leaving a comment.`.green)
                 }
             }
