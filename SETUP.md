@@ -22,12 +22,16 @@ Like all of my other bots this bot also uses something called Node Package Modul
 #### How you will apear for your friends. Either Online, Offline, Busy, Away, LookingToPlay or LookingToTrade.
 #
 ### Game
-#### The ID of the game you want to idle, could be found by coping the link of the game's page in the Steam Store. E.G for TF2 use 440, for CSGO use 730.
+#### The app ID of the game you want to idle, could be found by copying the link of the game's page in the Steam Store. E.G for TF2 use 440, for CSGO use 730.
+#
+### GroupURL
+#### The URL of the group you want to invite the user to. This is needed to validate that you're in the group you want to invite to.
+#### Delete the option ("groupURL": "https://steamcommunity.com/groups/blankllc",) to disable the option.
 #
 ### GroupID
-#### The URL of the group you want to invite the user to (if enabled). E.G: https://steamcommunity.com/groups/blankllc
-#### Delete the option ("groupID": "https://steamcommunity.com/groups/blankllc",) to disable the option.
-#	
+#### The ID64 of the group you want to invite the user to (if enabled).You can find the ID of your group here: https://steamcommunity.com/groups/YOUR_STEAM_GROUP_HERE/memberslistxml/?xml=1
+#### Set the option to 0 to disable the option (Option must be a number).
+#
 ### Clock
 #### Language code for setting your local time. E.G 'en' for US, 'en-uk' for UK, 'nb' for Norway, 'ru' for Russia. You can find your local code here: momentjs.com
 #
