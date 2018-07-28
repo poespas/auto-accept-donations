@@ -1,11 +1,12 @@
+const TradeOfferManager = require('steam-tradeoffer-manager')
+const SteamCommunity = require('steamcommunity');
 const SteamUser = require('steam-user');
 const SteamTotp = require('steam-totp');
-const SteamCommunity = require('steamcommunity');
-const TradeOfferManager = require('steam-tradeoffer-manager')
 const moment = require('moment');
 const colors = require('colors');
 
 const config = require('./config.json');
+const package = require('./../package.json');
 const blacklist = require('./blacklist.json');
 
 const client = new SteamUser();
@@ -29,10 +30,13 @@ client.logOn(logOnOptions);
 client.on('loggedOn', (details, parental) => {
     client.getPersonas([client.steamID], (personas) => {
         console.log(' ');
+        console.log(`[${moment().format('LTS')}]: You're currently running ${package.name} on version `+`${package.version}`.green);
         console.log(`[${moment().format('LTS')}]: Logged into Steam as `+personas[client.steamID].player_name.green);
         client.setPersona(SteamUser.Steam.EPersonaState.Online);
-        if(config.optional.game) {
-            client.gamesPlayed(['auto-accept-donations', config.optional.game]);
+        if(config.optional.game != 0) {
+            client.gamesPlayed([package.name, config.optional.game]);
+        } else {
+            client.gamesPlayed([package.name]);
         }
         setTimeout(() => {
             verify();
