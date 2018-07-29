@@ -51,7 +51,25 @@ client.on('webSession', (sessionid, cookies) => {
 
 function accept(offer) {
     offer.accept((err) => {
-        console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`   Trying to accept incoming donation.`);
+        if(!err) {
+            console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`   Trying to accept incoming donation.`);
+        } else {
+            if(err) {
+                console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`   Error when trying to accept donation, retrying after 5 seconds. ${err}.`.yellow);
+                setTimeout(() => {
+                    offer.accept((err) => {
+                        if(!err) {
+                            console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`   Trying to accept incoming donation.`);
+                        } else {
+                            if(err) {
+                                console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.red+`   Error after trying to accept the donation twice. Offer is not accepted.`.red);
+                            }
+                        }
+                    })
+                }, 5000)
+            }
+        }
+        
     })
 }
 
