@@ -138,17 +138,6 @@ manager.on('receivedOfferChanged', (offer, oldState) => {
         if(offer.state === TradeOfferManager.ETradeOfferState.InEscrow) {
             console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`    Incoming offer is now in escrow, you will most likely receive your item(s) in some days if no further action is taken.`.green);
         }
-        if(offer.state === TradeOfferManager.ETradeOfferState.Active) {
-            setTimeout(() => {
-                if(offer.itemsToGive === 0) {
-                    offer.accept((err) => {
-                        if(!err) {
-                            console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`   Retrying to accept incoming donation.`.yellow);
-                        }
-                    })
-                }
-            }, 10000);
-        }
     }, 500)
 })
 
