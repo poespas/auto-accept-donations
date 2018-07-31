@@ -1,3 +1,10 @@
+/* 
+Script developed and maintained by confern
+Running a old version of the script? Updates can be found here: https://github.com/confernn/auto-accept-donations
+
+Keep me going be donating through paypal.me/confern or https://steamcommunity.com/tradeoffer/new/?partner=293059984&token=0-l_idZR
+*/
+
 const TradeOfferManager = require('steam-tradeoffer-manager')
 const SteamCommunity = require('steamcommunity');
 const SteamUser = require('steam-user');
@@ -27,6 +34,7 @@ const logOnOptions = {
 
 client.logOn(logOnOptions);
 
+// When user has logged on, log and check if he/she is in the group he/she wants to invite to
 client.on('loggedOn', (details, parental) => {
     client.getPersonas([client.steamID], (personas) => {
         console.log(' ');
@@ -49,6 +57,7 @@ client.on('webSession', (sessionid, cookies) => {
     community.setCookies(cookies);
 });
 
+// Function that accepts the offer it's given
 function accept(offer) {
     offer.accept((err) => {
         if(err) console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`   Error while trying to accept donation. ${err}`.red);
@@ -59,6 +68,7 @@ function accept(offer) {
     })
 }
 
+// Function that processes the offer, if the offer is a donation; accept it, else log it in console
 function process(offer) {
     if(offer.itemsToGive.length === 0) {
         accept(offer);
@@ -67,13 +77,14 @@ function process(offer) {
     }
 }
 
+// If a new offer is recived; proccess it 
 manager.on('newOffer', (offer) => {
     console.log(' ');
     console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`  We recieved a new offer. Trade was sent by `+offer.partner.getSteamID64().yellow);
     process(offer);
 });
 
-
+// If a offer changed it's state; do something
 manager.on('receivedOfferChanged', (offer, oldState) => {
     setTimeout(() => {
         if(offer.state === TradeOfferManager.ETradeOfferState.Accepted) {
@@ -127,6 +138,7 @@ manager.on('receivedOfferChanged', (offer, oldState) => {
     }, 500)
 })
 
+// Function that verifies that the user is in the group he/she wants to invite to
 function verify() {
     community.getSteamGroup('blankllc', (err, group) => {
         if(!err) {
