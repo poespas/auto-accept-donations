@@ -135,7 +135,7 @@ manager.on('receivedOfferChanged', (offer, oldState) => {
         if(offer.state === TradeOfferManager.ETradeOfferState.InEscrow) {
             console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`    Incoming offer is now in escrow, you will most likely receive your item(s) in some days if no further action is taken.`.green);
         }
-    }, 500)
+    }, 1000)
 })
 
 // Function that verifies that the user is in the group he/she wants to invite to
