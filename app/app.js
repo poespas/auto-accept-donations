@@ -70,7 +70,7 @@ function accept(offer) {
 
 // Function that processes the offer, if the offer is a donation; accept it, else log it in console
 function process(offer) {
-    if(offer.itemsToGive.length === 0) {
+    if(offer.itemsToGive.length === 0 && offer.itemsToReceive > 0) {
         accept(offer);
     } else {
         console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`   Incoming offer is not a donation, offer ignored.`.yellow);
@@ -84,7 +84,7 @@ manager.on('newOffer', (offer) => {
     process(offer);
 });
 
-// If a offer changed it's state; do something
+// If offer changed it's state; do something
 manager.on('receivedOfferChanged', (offer, oldState) => {
     setTimeout(() => {
         if(offer.state === TradeOfferManager.ETradeOfferState.Accepted) {
