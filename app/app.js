@@ -37,7 +37,7 @@ client.logOn(logOnOptions);
 // When user has logged on, log and check if he/she is in the group he/she wants to invite to
 client.on('loggedOn', (details, parental) => {
     client.getPersonas([client.steamID], (personas) => {
-        console.log(' ');
+        console.log('\033c');
         console.log(`[${moment().format('LTS')}]: You're currently running ${package.name} on version `+`${package.version}`.green);
         console.log(`[${moment().format('LTS')}]: Logged into Steam as `+personas[client.steamID].player_name.green);
         client.setPersona(SteamUser.Steam.EPersonaState.Online);
