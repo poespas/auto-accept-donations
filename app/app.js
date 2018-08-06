@@ -1,6 +1,6 @@
 /* 
 Script developed and maintained by confern
-Running a old version of the script? Updates can be found here: https://github.com/confernn/auto-accept-donations
+Running an old version of the script? Updates can be found here: https://github.com/confernn/auto-accept-donations
 
 Keep me going be donating through paypal.me/confern or https://steamcommunity.com/tradeoffer/new/?partner=293059984&token=0-l_idZR
 */
