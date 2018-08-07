@@ -12,9 +12,9 @@ const SteamTotp = require('steam-totp');
 const moment = require('moment');
 const colors = require('colors');
 
-const config = require('./config.json');
-const package = require('./../package.json');
 const blacklist = require('./blacklist.json');
+const package = require('./../package.json');
+const config = require('./config.json');
 
 const client = new SteamUser();
 const community = new SteamCommunity();
