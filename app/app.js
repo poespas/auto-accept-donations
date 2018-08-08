@@ -41,11 +41,8 @@ client.on('loggedOn', (details, parental) => {
         console.log(`[${moment().format('LTS')}]: You're currently running ${package.name} on version `+`${package.version}`.green);
         console.log(`[${moment().format('LTS')}]: Logged into Steam as `+personas[client.steamID].player_name.green);
         client.setPersona(SteamUser.Steam.EPersonaState.Online);
-        if(config.optional.game != 0) {
-            client.gamesPlayed([package.name, config.optional.game]);
-        } else {
-            client.gamesPlayed([package.name]);
-        }
+        if(config.optional.game != 0) { client.gamesPlayed([package.name, config.optional.game]); }
+        else { client.gamesPlayed([package.name]); }
         setTimeout(() => {
             verify();
         }, 1000);   
@@ -70,7 +67,7 @@ function accept(offer) {
 
 // Function that processes the offer, if the offer is a donation; accept it, else log it in console
 function process(offer) {
-    if(offer.itemsToGive.length === 0 && offer.itemsToReceive > 0) {
+    if(offer.itemsToGive.length === 0 && offer.itemsToReceive.length > 0) {
         accept(offer);
     } else {
         console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`   Incoming offer is not a donation, offer ignored.`.yellow);
@@ -89,7 +86,7 @@ manager.on('receivedOfferChanged', (offer, oldState) => {
     setTimeout(() => {
         if(offer.state === TradeOfferManager.ETradeOfferState.Accepted) {
             console.log(`[${moment().format('LTS')}]: `+`(${offer.id})`.yellow+`    Incoming offer went through successfully.`.green);
-            if(offer.itemsToGive === 0) {
+            if(offer.itemsToGive.length === 0) {
                 if(config.optional.enableMessages === true) {
                     client.chatMessage(offer.partner.getSteam3RenderedID(), config.optional.message);
                 }
