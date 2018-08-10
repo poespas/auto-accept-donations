@@ -55,7 +55,7 @@ client.on('loggedOn', (details, parental) => {
         console.log(`${log(info)} You're currently running ${package.name} on version ${package.version.green}`);
         console.log(`${log(info)} Logged into Steam as ${personas[client.steamID].player_name.green}`);
         client.setPersona(SteamUser.Steam.EPersonaState.Online);
-        if(config.optional.game != 0) { client.gamesPlayed([package.name, config.optional.game]); }
+        if(config.optional.game != 0) { client.gamesPlayed([config.optional.game]); }
         else { client.gamesPlayed([package.name]); }
         setTimeout(() => { verify(); }, 1000);   
     });
