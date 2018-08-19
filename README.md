@@ -18,7 +18,7 @@
 #
 ## Requirements for using the bot
 * You need to have a Steam account, if not you create one for free [here](https://store.steampowered.com/join/)
-* Username of the Steam account is needed (**NOT NICKNAME**).
+* Username of the Steam account is needed (**NOT NICKNAME / ALIAS**).
 * Password for the Steam account is also needed for the bot to work.
 * NodeJS (explained in [this guide](https://github.com/confernn/auto-accept-donations/wiki/Installation))
 
