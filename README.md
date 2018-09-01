@@ -10,10 +10,10 @@
 
 #
 # Features
-* Accept donations and orders automatically (if there's no items on your side).
-* Ability to automatically send a custom message to the donator if enabled.
-* Ability to automatically post a custom comment to the donator if enabled.
-* Ability to blacklist specific users to ignore leaving comment(s) on their's profile.
+* Accept donations and orders automatically (if there's no items on your side)
+* Ability to automatically send a custom message to the donator
+* Ability to automatically post a custom comment to the donator
+* Ability to blacklist specific users to ignore leaving comment(s) on their profile
 
 #
 ## Requirements for using the bot
