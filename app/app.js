@@ -36,15 +36,9 @@ client.logOn(logOnOptions);
 
 function log(info) {
     var regular = `${`${package.name} |`.green} ${moment().format('LTS')} `;
-    if(info == 'info') {
-        return regular+' '+info.green+':';
-    }
-    if(info == 'trade') {
-        return regular+info.magenta+':';
-    }
-    if(info == 'warn') {
-        return regular+' '+info.yellow+':';
-    }
+    if(info == 'info') { return regular+' '+info.green+':'; }
+    if(info == 'trade') { return regular+info.magenta+':'; }
+    if(info == 'warn') { return regular+' '+info.yellow+':'; }
 }
 
 // When user has logged on, log and check if he/she is in the group he/she wants to invite to
@@ -81,17 +75,13 @@ function accept(offer) {
 // Function that processes the offer, if the offer is a donation; accept it, else log it in console
 function process(offer) {
     if(offer.itemsToGive.length === 0 && offer.itemsToReceive.length > 0) { accept(offer); } 
-    else {
-        info = 'trade';
-        console.log(`${log(info)} (${offer.id.yellow})`+' Incoming offer is not a donation, offer ignored.'.yellow);
-    }
+    else { info = 'trade'; console.log(`${log(info)} (${offer.id.yellow})`+' Incoming offer is not a donation, offer ignored.'.yellow); }
 }
 
-// If a new offer is recived; proccess it 
+// If a new offer is received; proccess it 
 manager.on('newOffer', (offer) => {
     info = 'trade';
-    console.log(' ');
-    console.log(`${log(info)} (${offer.id.yellow}) We recieved a new offer. Trade was sent by ${offer.partner.getSteamID64().yellow}`);
+    console.log(`\n${log(info)} (${offer.id.yellow}) We recieved a new offer. Trade was sent by ${offer.partner.getSteamID64().yellow}`);
     process(offer);
 });
 
